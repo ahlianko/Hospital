@@ -6,27 +6,18 @@ public class User {
     private String password;
     private String first_name;
     private String last_name;
-    private int role_id;
-    Role role;
+    ROLE ROLE;
 
     public User() {
     }
 
-    public int getRole_id() {
-        return role_id;
-    }
-
-    public void setRole_id(int role_id) {
-        this.role_id = role_id;
-    }
-
-    public User(int id, String username, String password, String first_name, String last_name, Role role) {
+    public User(int id, String username, String password, String first_name, String last_name, User.ROLE role) {
         this.id = id;
         this.username = username;
         this.password = password;
         this.first_name = first_name;
         this.last_name = last_name;
-        this.role = role;
+        this.ROLE = role;
     }
 
     public int getId() {
@@ -69,12 +60,12 @@ public class User {
         this.last_name = last_name;
     }
 
-    public Role getRole() {
-        return role;
+    public User.ROLE getRole() {
+        return ROLE;
     }
 
-    public void setRole(Role role) {
-        this.role = role;
+    public void setRole(User.ROLE role) {
+        this.ROLE = role;
     }
 
 
@@ -86,7 +77,11 @@ public class User {
                 ", password='" + password + '\'' +
                 ", first_name='" + first_name + '\'' +
                 ", last_name='" + last_name + '\'' +
-                ", role=" + role +
+                ", role=" + ROLE +
                 '}';
+    }
+
+    public enum ROLE {
+        ADMIN, DOCTOR, PATIENT, NURSE, UNKNOWN
     }
 }

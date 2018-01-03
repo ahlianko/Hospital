@@ -7,6 +7,19 @@
     <version>1.0-SNAPSHOT</version>
     <name>Hospital Maven Webapp</name>
     <url>http://maven.apache.org</url>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <version.junit>3.8.1</version.junit>
+        <version.jdk>1.8</version.jdk>
+        <version.maven.plugin>1.8</version.maven.plugin>
+        <version.javax.servlet-api>3.0.1</version.javax.servlet-api>
+        <version.javax.servlet-jsp>2.2</version.javax.servlet-jsp>
+        <version.javax.servlet.jstl>1.2</version.javax.servlet.jstl>
+        <version.log4j>1.2.17</version.log4j>
+        <version.mysql.connector>6.0.6</version.mysql.connector>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>junit</groupId>
@@ -17,7 +30,7 @@
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-            <version>5.1.6</version>
+            <version>6.0.6</version>
         </dependency>
         <dependency>
             <groupId>javax</groupId>
@@ -40,6 +53,11 @@
             <groupId>javax.servlet</groupId>
             <artifactId>jstl</artifactId>
             <version>1.2</version>
+        </dependency>
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.17</version>
         </dependency>
         <dependency>
             <groupId>taglibs</groupId>
@@ -68,7 +86,7 @@
                 <artifactId>tomcat7-maven-plugin</artifactId>
                 <version>2.2</version>
                 <configuration>
-                    <port>8080</port>
+                    <url>http://localhost:8080</url>
                     <path>/</path>
                 </configuration>
             </plugin>
@@ -76,8 +94,8 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
-                    <source>1.7</source>
-                    <target>1.7</target>
+                    <source>1.8</source>
+                    <target>1.8</target>
                 </configuration>
             </plugin>
         </plugins>
